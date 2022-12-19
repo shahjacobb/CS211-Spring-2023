@@ -9,7 +9,7 @@ int minGrade(vector<int> &grades)
     return 0;
     else
     {
-        int min = grades.begin();
+        int min = grades[0];
         for (int i : grades)
         {
             
@@ -23,12 +23,14 @@ int main()
 {
     vector<int> grades;
     int x;
-    do{
+    while(true){
         cout << "Enter a grade. Enter -1 if finished or if no grades yet recieved.";
         cin >> x;
+        if (x == -1)
+        break;
         grades.push_back(x);
     }
-    while(x != -1);
+    
     cout << "Min of grades are:" << minGrade(grades);
 
     
